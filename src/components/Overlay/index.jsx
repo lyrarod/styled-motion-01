@@ -30,6 +30,7 @@ const Item = styled(motion.div).attrs(() => {
 const wrapper = {
   show: {
     transition: {
+      when: "beforeChildren",
       delayChildren: 0.5,
       staggerChildren: 0.3,
     },
@@ -45,7 +46,7 @@ const item = {
   },
 };
 
-const index = () => {
+export default function index() {
   const [endAnimation, setEndAnimation] = useState();
 
   return (
@@ -56,13 +57,11 @@ const index = () => {
       }}
       endanimation={endAnimation}
     >
-      {Array(5)
+      {Array(3)
         .fill(null)
         .map((_, i) => (
           <Item key={i} />
         ))}
     </Wrapper>
   );
-};
-
-export default index;
+}
