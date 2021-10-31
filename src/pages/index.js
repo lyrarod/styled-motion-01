@@ -10,41 +10,42 @@ const Section = styled.section`
   flex-direction: column;
   width: 100%;
   height: 100vh;
-  /* background-color: #004f8c; */
-  background-color: #c4f1be;
-  background-image: url("http://www.transparenttextures.com/patterns/grunge-wall.png");
+  background-color: #201e50;
+  background-image: url("/assets/grunge-wall.png");
   overflow: hidden;
 
   h1 {
-    font-size: 5rem;
-    font-family: "Orbitron", sans-serif;
+    font-size: 7rem;
     font-weight: 900;
-    background: linear-gradient(red, blue);
+    font-family: "Orbitron", sans-serif;
+    /* background: linear-gradient(red, blue);
     background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
+    -webkit-background-clip: text; */
+    color: whitesmoke;
+    text-shadow: 3px 3px 3px #0009;
 
-    @media screen and (max-width: 499px) {
-      font-size: 4rem;
+    @media screen and (max-width: 665px) {
+      font-size: 3.5rem;
+      text-shadow: 2px 2px 2px #0009;
     }
   }
 `;
 
 const h1Variants = {
   show: {
-    opacity: 1,
     y: 0,
     scale: 1,
+    opacity: 1,
     transition: {
       delay: 1,
-      duration: 3,
+      duration: 5,
       ease: "backInOut",
     },
   },
   hidden: {
-    opacity: 0,
     y: 100,
     scale: 0,
+    opacity: 0,
   },
 };
 
