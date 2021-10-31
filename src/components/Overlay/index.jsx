@@ -30,7 +30,6 @@ const Item = styled(motion.div).attrs(() => {
 const wrapper = {
   show: {
     transition: {
-      when: "beforeChildren",
       delayChildren: 0.5,
       staggerChildren: 0.3,
     },
@@ -49,14 +48,13 @@ const item = {
 export default function index() {
   const [endAnimation, setEndAnimation] = useState();
 
+  const onComplete = (def) => {
+    console.log("Animation completed!", def);
+    if (def === "show") setEndAnimation(1);
+  };
+
   return (
-    <Wrapper
-      onAnimationComplete={(def) => {
-        console.log("Completed Animating! ", def);
-        if (def === "show") setEndAnimation(1);
-      }}
-      endanimation={endAnimation}
-    >
+    <Wrapper onAnimationComplete={onComplete} endanimation={endAnimation}>
       {Array(3)
         .fill(null)
         .map((_, i) => (
